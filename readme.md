@@ -41,3 +41,70 @@ A dataset which contains a list of games, results and some numbers about the gam
 ### Initial Plan
 
 Explore and measure the quality and quantity of data, applying data cleansing and feature engineering techniques to gain insights and formulate hypotheses about the number of goals in a game. using data analysis techniques the object of this exploratory research is to understand variations and trends that can provide us with better clarity on how the results can be influenced according to the statistics of each game
+
+### Data Cleaning and Feature engineering explanation
+
+For data cleaning and engineering, several techniques were applied so that the dataset was satisfactory so that it could be used by any machine learning model that might require it, in this way the following techniques were performed for data cleaning and engineering
+
+- Remove the UniqueId field, a unique field cannot be supply valid information to a data analyse.
+- About missing values we chose to exclude the line that contains a missing value and matain 14440 observations
+- Separate data field in tree fields, day, mouth and year.
+- Convert the values loss, win and draw to 0,1 and 2 respectively.
+- rename the win Loss column to result.
+- Remove tha character '-' of season id (1993-94 to 199394).
+- Create the columns total fouls, total corners, total yellow cards and total red cards.
+- Identify and treat outliers, we chose to keep outliers due to the nature of the analysis being about a sport, it is relatively common in sports to get results strangely out of the curve
+- rename column names to name most appropriate
+- convert string variable to dummies with one hot encode technique
+- save the filtred dataset in a new csv file
+
+### Key Findings and Insights
+
+After extensive analysis we were able to reach the following conclusions based on the experiments shown below.
+
+- We found an apparent relationship between number of goals and number of fouls, apparently games with high number of goals tend to have low number of fouls.
+
+- the average goals increase by 0.1 from 2000 to 2018, a negligible increase, can be interpreted as a normal variation.
+
+- the average number of absences decreased from 27 in 2000 to 19 in 2018, a continuous drop between years of approximately 30%.
+
+- despite the number of fouls having dropped, the number of red cards remained stable.
+
+- We found another apparent relationship between number of goals and number of corners, apparently games with high number of goals tend to have a median number of corners.
+
+- corners and fouls stop the game, so the time taken by corners and fouls is likely to decrease the number of chances for goals due to the ball being out of play.
+
+- when the game has 3 red cards or more, the average of goals increases by approximately 1 goal.
+
+- Teams with fewer fouls achieved a higher frequency of wins.
+
+### hypothesis
+
+After the initial analysis we were able to raise three possible hypotheses for our exploration
+
+- hypothesis 1: A team that receives a red card is more likely to receive a goal.
+- hypothesis 2: The team that commits more fouls, are more likely to win.
+- hypothesis 3: The fact that a team scores a goal increases its own chance of conceding a goal.
+
+### Test result of hypothesis 3
+
+FALSE, the teams that have the highest frequency of victories are the team with less number of fouls, in the research the teams with most elevate number of fouls reached a maximum of 40% of victories while the teams with lesser fouls reached up to 60% of victories.
+
+### Suggestions for next steps in analyzing this data
+
+- Analyse if the results of games can be influenced by the referee
+- Analyse if the number of goals can be influenced by the previous game
+- Analyse if the number of games in a season can influence the number of goals, cards and fols
+
+### Quality of dataset and requets for more data
+
+The general quality of this data set is satisfactory for a superficial analysis of game results, we can raise some hypotheses and some factors that influence the result of the English league, however, for a more in-depth analysis, a larger set of features would be necessary, it would be plausible require data from
+
+- Period of the game in which the goals were scored
+- Game period in which the cards came out
+- If the game has added to its time
+- What positions of the expelled players
+- Which players scored the goals
+- Goals disallowed
+- Goals disallowed by VAR
+- expulsions reviewed by VAR
