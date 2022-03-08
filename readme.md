@@ -8,6 +8,10 @@ The Premier League, often referred to as the English Premier League or the EPL (
 
 The competition was founded as the FA Premier League on 20 February 1992 following the decision of clubs in the Football League First Division to break away from the Football League, founded in 1888, and take advantage of a lucrative television rights sale to Sky.From 2019 to 2020, the league's accumulated television rights deals were worth around £3.1 billion a year, with Sky and BT Group securing the domestic rights to broadcast 128 and 32 games respectively. The Premier League is a corporation where chief executive Richard Masters is responsible for its management, whilst the member clubs act as shareholders.Clubs were apportioned central payment revenues of £2.4 billion in 2016–17, with a further £343 million in solidarity payments to English Football League (EFL) clubs.
 
+### Objective
+
+This model is focused on try predict match total goals.
+
 ### Dataset description
 
 A dataset which contains a list of games, results and some numbers about the games of premier league, the england soccer league.
@@ -40,7 +44,7 @@ A dataset which contains a list of games, results and some numbers about the gam
 
 ### Initial Plan
 
-Explore and measure the quality and quantity of data, applying data cleansing and feature engineering techniques to gain insights and formulate hypotheses about the number of goals in a game. using data analysis techniques the object of this exploratory research is to understand variations and trends that can provide us with better clarity on how the results can be influenced according to the statistics of each game
+Explore and measure the quality and quantity of data, applying data cleansing and feature engineering techniques to gain insights and formulate hypotheses about the number of goals in a game. using data analysis techniques the object of this exploratory research is to understand variations and trends that can provide us with better clarity on how the results can be influenced according to the statistics of each game, after data analyses step we gonna try predict match total goals on plays.
 
 ### Data Cleaning and Feature engineering explanation
 
@@ -77,6 +81,21 @@ After extensive analysis we were able to reach the following conclusions based o
 - when the game has 3 red cards or more, the average of goals increases by approximately 1 goal.
 
 - Teams with fewer fouls achieved a higher frequency of wins.
+
+### Summary of training
+
+Trainning tachnics applyeds:
+
+- Linear regression simple
+- Linear regression with standard scaller
+- Lasso regression with Hyperparameters alphas
+- Ridge regresion with Hyperparameters alphas
+- polynomial features to regularization model
+
+### Result of experiments
+
+The best result is the Lasso regression with alphas 0.01, the accuracy of this regression is
+0.21169758924190396, but this result is very low, due to this it was concluded that it is impossible to predict the number of goals, at least with these dataset
 
 ### hypothesis
 
